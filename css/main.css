@@ -1,8 +1,6 @@
 body {
     margin: 0;
     padding: 0;
-    /* font-family: Arial, sans-serif; */
-    font-family: 'Roboto', Arial, sans-serif;
 }
 
 header {
@@ -23,12 +21,6 @@ header .navbar-nav .nav-link {
     background: url('../images/parallax.jpg') no-repeat center fixed;
     background-size: cover;
     height: 400px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #fff;
-    font-size: 2rem;
-    text-shadow: 2px 2px 4px #000;
 }
 
 footer {
@@ -37,14 +29,17 @@ footer {
     padding: 10px 0;
     text-align: center;
 }
+
 .carousel-item {
     height: 70vh;
-    img{
+
+    img {
         height: 100%;
         object-fit: cover;
     }
 }
-.profile_pic{
+
+.profile_pic {
     background-image: url('../images/profile.jpg');
     height: 150px;
     width: 150px;
@@ -54,12 +49,96 @@ footer {
     border: 4px solid #ff9d9d;
 }
 
+.logo-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+
+.logo-container img {
+    width: 100px;
+    height: auto;
+    object-fit: contain;
+    transition: filter 0.3s ease;
+}
+
+.logo-container img:hover {
+    filter: grayscale(100%);
+}
+
+.contact_wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    text-align: left;
+    min-height: 60vh;
+}
+
+.contact_box {
+    width: 48%;
+}
+.nav-item{
+   position: relative; 
+}
+
+.nav-item::after{
+    content: '';
+    position: absolute;
+    bottom: 0px;
+    height: 2px;
+    width: 0;
+    left: 0;
+    transition: all ease 0.3s;
+}
+.nav-item:hover::after{
+    width: 80%;
+    left: 10%;
+    background-color: #235550;
+    transition: all ease 0.3s;
+}
+.act_tab::after{
+    content: '';
+    position: absolute;
+    bottom: 0px;
+    height: 2px;
+    width: 80%;
+    left: 10%;
+    background-color: #235550;
+}
 @media (max-width: 768px) {
     .parallax {
         height: 250px;
+        background-size: 100%;
+        background-position: bottom;
     }
+
+    .logo-container img {
+        width: 80px;
+    }
+
     .carousel-inner {
         height: auto;
     }
+    .nav-item:hover::after{
+        width: 30%;
+        left: 0%;
+    }
+    .act_tab::after{
+        width: 30%;
+        left: 0%;
+    }
 }
 
+@media (max-width: 480px) {
+    .parallax {
+        height: 200px;
+    }
+
+    .logo-container img {
+        width: 60px;
+    }
+}
