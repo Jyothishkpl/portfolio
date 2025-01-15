@@ -131,6 +131,10 @@ footer {
         width: 30%;
         left: 0%;
     }
+    .contact_box {
+        width: 100%;
+        margin-top: 10px;
+    }
 }
 
 @media (max-width: 480px) {
